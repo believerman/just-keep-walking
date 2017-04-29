@@ -1,0 +1,23 @@
+html, :before, :after, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, cite, code, em, img, small, strong, ol, ul, li, article, aside, footer, header, menu, nav, section {
+  border: 0;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+header, footer, section, article, menu {
+  display: block;
+}
+
+a, a:focus {
+  outline: none;
+}
+
+img {
+  height: auto !important;
+  max-width: 100%;
+}

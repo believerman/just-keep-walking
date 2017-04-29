@@ -1,0 +1,29 @@
+html {
+  font-size: 62.5%;
+  height: 100%;
+  min-width: 320px;
+  overflow-y: scroll;
+}
+
+body {
+  padding-bottom: 44px;
+}
+
+html, #menu {
+  background: #576277 url("images/background.png") no-repeat center center fixed;
+  background-image: url("images/background.png"), linear-gradient(to bottom, #576277 0%, #ab7e6e 50%, #503f50 100%);
+  background-size: cover;
+  min-width: 320px;
+}
+
+@media only screen and (min-width: 1000px),  only screen and (min-height: 1000px) {
+  html, #menu {
+    background-image: url("images/background.png"), linear-gradient(to bottom, #576277 0%, #ab7e6e 50%, #503f50 100%);
+    background-repeat: no-repeat, repeat-x;
+    background-size: 1000px, 1000px 100%;
+  }
+}
+
+#menu {
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}

@@ -1,0 +1,21 @@
+#menu {
+  bottom: 0;
+  left: 0;
+  line-height: 44px;
+  right: 0;
+  position: fixed;
+
+  a {
+    display: inline-block;
+    padding: 0 22px;
+  }
+
+  span {
+    border-bottom: 1px solid transparent;
+    display: inline-block;
+  }
+
+  .active span {
+    border-bottom-color: #fff;
+  }
+}

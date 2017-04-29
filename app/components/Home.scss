@@ -1,0 +1,16 @@
+#home {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+  min-height: calc(100vh - 288px);
+}
+
+#timer {
+  font-size: 80px;
+}
+
+#text {
+  font-size: 32px;
+}
