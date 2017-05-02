@@ -1,6 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
+const OfflinePlugin = require('offline-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 let config = {
@@ -15,11 +17,12 @@ let config = {
   },
   output: {
     path: path.resolve(__dirname, "public"),
-    filename: "jkw.js",
+    filename: "jkw.[hash].js",
     publicPath: "/"
   },
   module: {
     rules: [
+      {test: /manifest.json$/, loader: "file-loader?name=manifest.json!web-app-manifest-loader"},
       {test: /\.(js|jsx)$/, loader: "babel-loader"},
       {test: /\.scss$/, loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"])},
       {test: /\.(jpg|gif|png)$/, loader: "file-loader", options: {name:"./images/[name].[hash].[ext]"}}
@@ -40,9 +43,15 @@ let config = {
       }
     }),
     new ExtractTextPlugin({
-      filename: "style.css",
+      filename: "style.[hash].css",
       allChunks: true
-    })
+    }),
+    new CopyWebpackPlugin([
+      {from: "app/images", to: "images"}
+    ], {
+      ignore: ["*.db"]
+    }),
+    new OfflinePlugin()
   ]
 };
 

@@ -1,3 +1,6 @@
+require("offline-plugin/runtime").install();
+require("./manifest.json");
+
 import React from "react";
 import ReactDOM from "react-dom";
 

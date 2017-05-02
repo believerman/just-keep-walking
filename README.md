@@ -19,6 +19,7 @@ Features so far:
 * Tap homepage to start/stop walking.
 * Stopwatch-style counter on homepage.
 * Log page with breakdown of previous walks.
+* PWA stuff.
 
 To do:
 
@@ -26,4 +27,3 @@ To do:
 * Make log items deletable.
 * Stats section.
 * Transitions.
-* PWA stuff.
