@@ -25,7 +25,7 @@ let config = {
       {test: /manifest.json$/, loader: "file-loader?name=manifest.json!web-app-manifest-loader"},
       {test: /\.(js|jsx)$/, loader: "babel-loader"},
       {test: /\.scss$/, loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"])},
-      {test: /\.(jpg|gif|png)$/, loader: "file-loader", options: {name:"./images/[name].[hash].[ext]"}}
+      {test: /\.(jpg|gif|png)$/, loader: "file-loader", options: {name:"./images/[name].[ext]"}}
     ]
   },
   devServer: {

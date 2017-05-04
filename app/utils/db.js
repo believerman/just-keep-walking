@@ -3,7 +3,7 @@ import Dexie from "dexie";
 const db = new Dexie("JustKeepWalking");
 db.version(1).stores({ walks: "++id" });
 
-/* */
+/* *
 db.on("populate", function() {
   let testData = [
     {id: 1, start: new Date(2016, 11, 15, 12), end: new Date(2016, 11, 15, 13, 45)},
