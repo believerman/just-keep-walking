@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React from "react";
 import moment from "moment";
 import PropTypes from "prop-types";
@@ -26,11 +25,14 @@ LogDate.propTypes = {
 const LogMonth = props => {
   let monthName = moment().month(props.id - 1).format("MMMM");
 
+  // Generate list of dates in reverse order.
+  let dates = Object.keys(props.walks).sort().reverse();
+
   return (
     <li>
       <h3>{monthName}</h3>
       <ul>
-        {_.toPairs(props.walks).reverse().map(date => <LogDate key={date[0]} id={date[0]} walks={date[1]} />)}
+        {dates.map(date => <LogDate key={date} id={date} walks={props.walks[date]} />)}
       </ul>
     </li>
   );
@@ -41,11 +43,14 @@ LogMonth.propTypes = {
 }; // LogMonth.propTypes
 
 const LogYear = props => {
+  // Generate list of months in reverse order.
+  let months = Object.keys(props.walks).sort().reverse();
+
   return (
     <li>
       <h2>{props.id}</h2>
       <ul>
-        {_.toPairs(props.walks).reverse().map(month => <LogMonth key={month[0]} id={month[0]} walks={month[1]} />)}
+        {months.map(month => <LogMonth key={month} id={month} walks={props.walks[month]} />)}
       </ul>
     </li>
   );
@@ -71,10 +76,13 @@ const Log = props => {
       return acc;
     }, {});
 
+    // Generate list of years in reverse order.
+    let years = Object.keys(groupedWalks).sort().reverse();
+
     return (
       <main id="log">
         <ul>
-          {_.toPairs(groupedWalks).reverse().map(year => <LogYear key={year[0]} id={year[0]} walks={year[1]} />)}
+          {years.map(year => <LogYear key={year} id={year} walks={groupedWalks[year]} />)}
         </ul>
       </main>
     );
