@@ -47,7 +47,7 @@ class LogItem extends React.Component{
               this.props.handleDeleteWalk(this.props.id);
               this.setState({deleting: true});
               e.stopPropagation();
-            }}>x</a>
+            }}></a>
           : null,
         liStyle = (this.state.deleting)
           ? {opacity: 0.5}

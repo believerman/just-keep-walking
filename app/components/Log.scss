@@ -24,7 +24,7 @@
   h3,
   h4,
   p {
-    padding: 0 5px;
+    padding: 0 1.6rem;
   }
 
   h2 {
@@ -55,19 +55,47 @@
     cursor: pointer;
     display: flex;
     font-size: 1.4rem;
+    justify-content: space-between;
     line-height: 1.2;
-    padding: 1em 5px;
+    padding-bottom: 1em;
+    padding-top: 1em;
 
     .deleteItem {
       align-items: center;
-      background: #ce383b;
-      border-radius: 6px;
+      align-self: center;
+      background: #fff;
+      border-radius: 16px;
+      color: #946b6e;
       display: flex;
+      flex: 0 0 32px;
       font-family: Helvetica, Arial, sans-serif;
       font-size: 20px;
+      height: 32px;
       justify-content: center;
       line-height: 1;
+      margin-left: .5rem;
+      min-height: 32px;
+      position: relative;
       width: 32px;
+
+      &:before,
+      &:after {
+        border: 1px solid currentColor;
+        content: "";
+        left: 50%;
+        margin: -1px -8px;
+        position: absolute;
+        top: 50%;
+        width: 16px;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
     }
   }
 }
