@@ -3,7 +3,7 @@ import Dexie from "dexie";
 const db = new Dexie("JustKeepWalking");
 db.version(1).stores({ walks: "++id" });
 
-/* */
+/* *
 db.on("populate", function() {
   const range = (a, b) => {
     let range = [];

@@ -25,7 +25,8 @@ let config = {
       {test: /manifest.json$/, loader: "file-loader?name=manifest.json!web-app-manifest-loader"},
       {test: /\.(js|jsx)$/, loader: "babel-loader"},
       {test: /\.scss$/, loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"])},
-      {test: /\.(jpg|gif|png)$/, loader: "file-loader", options: {name:"./images/[name].[ext]"}}
+      {test: /\.(jpg|gif|png)$/, loader: "file-loader", options: {name:"./images/[name].[ext]"}},
+      {test: /\.woff2$/, loader: "file-loader", options: {name:"./fonts/[name].[ext]"}}
     ]
   },
   devServer: {
@@ -53,16 +54,9 @@ let config = {
     }),
     new OfflinePlugin({
       autoUpdate: 1000 * 60 * 60,
-      caches: {
-        main: [
-          'jkw.*.js',
-          'style.*.css'
-        ],
-        additional: [
-          'images/background.png',
-          '*fonts.*'
-        ]
-      },
+      externals: [
+          'images/background.png'
+      ],
       ServiceWorker: {
         events: true,
         navigateFallbackURL: '/'
