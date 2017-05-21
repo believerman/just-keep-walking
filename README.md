@@ -4,7 +4,19 @@ My fiancée tries to keep track of how much time we spend walking our dog - we h
 
 This project will (hopefully) be a progressive web app which fits her needs!
 
-Key Tech:
+## Features
+
+[x] Tap homepage to start/stop walking.
+[x] Stopwatch-style counter on homepage.
+[x] Log page with breakdown of previous walks.
+[x] Make log items deletable.
+[x] Add offline-first PWA functionality.
+[ ] Test Service Workers.
+[ ] Make log items editable.
+[ ] Stats section.
+[ ] Transitions.
+
+## Key Tech
 
 * [Dexie](http://dexie.org/)
 * [Moment.js](https://momentjs.com/)
@@ -15,21 +27,6 @@ Key Tech:
 * [Scss](http://sass-lang.com/)
 * [Offline Plugin](https://github.com/NekR/offline-plugin)
 
-Helpful Articles:
+## Helpful Articles
 
 * [Handling Client Side App Updates (with Service Workers)](https://zach.codes/handling-client-side-app-updates-with-service-workers/) by [Zach Silveira](https://github.com/zackify).
-
-Features so far:
-
-* Tap homepage to start/stop walking.
-* Stopwatch-style counter on homepage.
-* Log page with breakdown of previous walks.
-* PWA stuff.
-* Make log items deletable.
-
-To do:
-
-* Test Service Workers again.
-* Make log items editable.
-* Stats section.
-* Transitions.
