@@ -51,7 +51,23 @@ let config = {
     ], {
       ignore: ["*.db"]
     }),
-    new OfflinePlugin()
+    new OfflinePlugin({
+      autoUpdate: 1000 * 60 * 60,
+      caches: {
+        main: [
+          'jkw.*.js',
+          'style.*.css'
+        ],
+        additional: [
+          'images/background.png',
+          '*fonts.*'
+        ]
+      },
+      ServiceWorker: {
+        events: true,
+        navigateFallbackURL: '/'
+      }
+    })
   ]
 };
 
