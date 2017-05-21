@@ -6,15 +6,15 @@ This project will (hopefully) be a progressive web app which fits her needs!
 
 ## Features
 
-[x] Tap homepage to start/stop walking.
-[x] Stopwatch-style counter on homepage.
-[x] Log page with breakdown of previous walks.
-[x] Make log items deletable.
-[x] Add offline-first PWA functionality.
-[ ] Test Service Workers.
-[ ] Make log items editable.
-[ ] Stats section.
-[ ] Transitions.
+- [x] Tap homepage to start/stop walking.
+- [x] Stopwatch-style counter on homepage.
+- [x] Log page with breakdown of previous walks.
+- [x] Make log items deletable.
+- [x] Add offline-first PWA functionality.
+- [ ] Test Service Workers.
+- [ ] Make log items editable.
+- [ ] Stats section.
+- [ ] Transitions.
 
 ## Key Tech
 
