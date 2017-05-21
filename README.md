@@ -14,16 +14,21 @@ Key Tech:
 * [webpack](https://webpack.js.org/)
 * [Scss](http://sass-lang.com/)
 
+Helpful Articles:
+
+* [Handling Client Side App Updates (with Service Workers)](https://zach.codes/handling-client-side-app-updates-with-service-workers/) by [Zach Silveira](https://github.com/zackify).
+
 Features so far:
 
 * Tap homepage to start/stop walking.
 * Stopwatch-style counter on homepage.
 * Log page with breakdown of previous walks.
 * PWA stuff.
+* Make log items deletable.
 
 To do:
 
+* Test Service Workers again.
 * Make log items editable.
-* Make log items deletable.
 * Stats section.
 * Transitions.
