@@ -52,7 +52,22 @@
   }
 
   p {
+    cursor: pointer;
+    display: flex;
     font-size: 1.4rem;
-    line-height: 3.2;
+    line-height: 1.2;
+    padding: 1em 5px;
+
+    .deleteItem {
+      align-items: center;
+      background: #ce383b;
+      border-radius: 6px;
+      display: flex;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      justify-content: center;
+      line-height: 1;
+      width: 32px;
+    }
   }
 }

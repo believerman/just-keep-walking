@@ -17,7 +17,7 @@ class App extends React.Component {
       currentWalk: null
     };
 
-    let that = this, methods = ["handleStartWalk", "handleEndWalk"];
+    let that = this, methods = ["handleStartWalk", "handleEndWalk", "handleDeleteWalk"];
     methods.forEach(method => this[method] = that[method].bind(this));
   } // constructor
 
@@ -56,6 +56,16 @@ class App extends React.Component {
       });
   } // handleEndWalk
 
+  handleDeleteWalk(id) {
+    db.table("walks")
+      .delete(id)
+      .then(() => {
+        const newList = this.state.walks.filter(walk => walk.id !== id);
+        const currentWalk = (id === currentWalk) ? null : currentWalk;
+        this.setState({ walks: newList, currentWalk: currentWalk });
+      });
+  } // handleDeleteWalk
+
   render() {
     let currentWalk = this.state.walks.find(walk => walk.id === this.state.currentWalk) || null;
 
@@ -68,7 +78,7 @@ class App extends React.Component {
               <Home currentWalk={currentWalk} onStartWalk={this.handleStartWalk} onEndWalk={this.handleEndWalk}/>
             )}/>
             <Route path="/log" exact render={() => (
-              <Log walks={this.state.walks} />
+              <Log walks={this.state.walks} handleDeleteWalk={this.handleDeleteWalk} />
             )}/>
             <Menu />
           </div>

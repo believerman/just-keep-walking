@@ -12,14 +12,15 @@ const LogDate = props => {
     <li>
       <h4>{dateName}</h4>
       <ul>
-        {props.walks.reverse().map(walk => <LogItem key={walk.id} {...walk} />)}
+        {props.walks.reverse().map(walk => <LogItem key={walk.id} {...walk} handleDeleteWalk={props.handleDeleteWalk} />)}
       </ul>
     </li>
   );
 }; // LogDate Component
 LogDate.propTypes = {
   id: PropTypes.string.isRequired,
-  walks: PropTypes.array.isRequired
+  walks: PropTypes.array.isRequired,
+  handleDeleteWalk: PropTypes.func.isRequired
 }; // LogDate.propTypes
 
 const LogMonth = props => {
@@ -32,14 +33,15 @@ const LogMonth = props => {
     <li>
       <h3>{monthName}</h3>
       <ul>
-        {dates.map(date => <LogDate key={date} id={date} walks={props.walks[date]} />)}
+        {dates.map(date => <LogDate key={date} id={date} walks={props.walks[date]} handleDeleteWalk={props.handleDeleteWalk} />)}
       </ul>
     </li>
   );
 }; // LogMonth Component
 LogMonth.propTypes = {
   id: PropTypes.string.isRequired,
-  walks: PropTypes.object.isRequired
+  walks: PropTypes.object.isRequired,
+  handleDeleteWalk: PropTypes.func.isRequired
 }; // LogMonth.propTypes
 
 const LogYear = props => {
@@ -50,14 +52,15 @@ const LogYear = props => {
     <li>
       <h2>{props.id}</h2>
       <ul>
-        {months.map(month => <LogMonth key={month} id={month} walks={props.walks[month]} />)}
+        {months.map(month => <LogMonth key={month} id={month} walks={props.walks[month]} handleDeleteWalk={props.handleDeleteWalk} />)}
       </ul>
     </li>
   );
 }; // LogYear Component
 LogYear.propTypes = {
   id: PropTypes.string.isRequired,
-  walks: PropTypes.object.isRequired
+  walks: PropTypes.object.isRequired,
+  handleDeleteWalk: PropTypes.func.isRequired
 }; // LogYear.propTypes
 
 const Log = props => {
@@ -82,7 +85,7 @@ const Log = props => {
     return (
       <main id="log">
         <ul>
-          {years.map(year => <LogYear key={year} id={year} walks={groupedWalks[year]} />)}
+          {years.map(year => <LogYear key={year} id={year} walks={groupedWalks[year]} handleDeleteWalk={props.handleDeleteWalk} />)}
         </ul>
       </main>
     );
@@ -95,7 +98,8 @@ const Log = props => {
   }
 } // Log Component
 Log.propTypes = {
-  walks: PropTypes.array.isRequired
+  walks: PropTypes.array.isRequired,
+  handleDeleteWalk: PropTypes.func.isRequired
 }; // Log.propTypes
 
 export default Log;
