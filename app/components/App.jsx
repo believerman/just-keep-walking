@@ -49,9 +49,12 @@ class App extends React.Component {
     db.table("walks")
       .update(id, { end: newDate })
       .then(() => {
-        const newList = this.state.walks;
-        const walkId = newList.findIndex(walk => walk.id === id);
-        newList[walkId].end = newDate;
+        const newList = this.state.walks.map(walk => {
+          if (walk.id === id) {
+            walk.end = newDate;
+          }
+          return walk;
+        });
         this.setState({ walks: newList, currentWalk: null });
       });
   } // handleEndWalk
@@ -61,8 +64,7 @@ class App extends React.Component {
       .delete(id)
       .then(() => {
         const newList = this.state.walks.filter(walk => walk.id !== id);
-        const currentWalk = (id === currentWalk) ? null : currentWalk;
-        this.setState({ walks: newList, currentWalk: currentWalk });
+        this.setState({ walks: newList, currentWalk: null });
       });
   } // handleDeleteWalk
 
