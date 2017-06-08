@@ -15,6 +15,9 @@ html,
 #log h3 {
   background: #576277 url("images/background.png") no-repeat center center fixed;
   background-image: url("images/background.png"), linear-gradient(to bottom, #576277 0%, #ab7e6e 50%, #503f50 100%);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   min-width: 320px;
 }
@@ -26,6 +29,9 @@ html,
   #log h3 {
     background-image: url("images/background.png"), linear-gradient(to bottom, #576277 0%, #ab7e6e 50%, #503f50 100%);
     background-repeat: no-repeat, repeat-x;
+    -webkit-background-size: 1000px, 1000px 100%;
+    -moz-background-size: 1000px, 1000px 100%;
+    -o-background-size: 1000px, 1000px 100%;
     background-size: 1000px, 1000px 100%;
   }
 }
